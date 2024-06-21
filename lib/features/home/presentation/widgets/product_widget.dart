@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icon_broken/icon_broken.dart';
 import 'package:slash_task/features/home/domain/entities/sub_entity/product_entity.dart';
+import 'package:slash_task/resources/assets_manager.dart';
 import 'package:slash_task/resources/color_manager.dart';
 import 'package:slash_task/resources/string_manager.dart';
 
@@ -9,45 +10,61 @@ class ProductWidget extends StatelessWidget {
   ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        onTap: () {},
-        child: Container(
-          height: 200,
-          width: 100,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Image.asset('assets/images/best_seller_1.jpg'),
-                  IconButton(
-                      style: IconButton.styleFrom(
-                          backgroundColor: ColorManager.lightGrey),
-                      onPressed: () {},
-                      icon: Icon(IconBroken.Heart))
-                ],
-              ),
-              Text(productEntity.name.toString()),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(StringManager.egp +
-                        ' ' +
-                        productEntity.price.toString()),
-                    IconButton(
-                        style:
-                            IconButton.styleFrom(backgroundColor: Colors.grey),
-                        onPressed: () {},
-                        icon: Icon(IconBroken.Heart))
-                  ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: InkWell(
+          onTap: () {},
+          child: Container(
+            margin: EdgeInsets.all(5),
+            height: 250,
+            width: 150,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Stack(
+                    alignment: Alignment.topRight,
+                    children: [
+                      Image.asset(AssetManager.defaultImage),
+                      IconButton(
+                          style: IconButton.styleFrom(
+                              backgroundColor: ColorManager.lightGrey),
+                          onPressed: () {},
+                          icon: Icon(IconBroken.Heart))
+                    ],
+                  ),
                 ),
-              )
-            ],
-          ),
-        ));
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(productEntity.name.toString()),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        StringManager.egp +
+                            ' ' +
+                            productEntity.price.toString(),
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          style: IconButton.styleFrom(
+                              backgroundColor: ColorManager.blackColor),
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.add,
+                            color: ColorManager.whiteColor,
+                          ))
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )),
+    );
   }
 }

@@ -18,9 +18,15 @@ class ResponsiveHomeScreen extends StatelessWidget {
           return LayoutBuilder(
             builder: (context, constraints) {
               if (constraints.maxWidth < 600) {
-                return MobileHomeUI(categories: state.categories);
+                return MobileHomeUI(
+                  categories: state.categories,
+                  homeData: state.homeData,
+                );
               } else {
-                return WebHomeUI(categories: state.categories,homeData: state.homeData,);
+                return WebHomeUI(
+                  categories: state.categories,
+                  homeData: state.homeData,
+                );
               }
             },
           );

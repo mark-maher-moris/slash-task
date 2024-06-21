@@ -6,62 +6,65 @@ import 'package:slash_task/resources/string_manager.dart';
 
 PreferredSizeWidget customAppBar() {
   return AppBar(
-    centerTitle: true,
-    leadingWidth: 100,
-    leading: Padding(
-      padding: const EdgeInsets.only(left: 20, top: 20),
-      child: Text(
-        StringManager.slash,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      centerTitle: true,
+      backgroundColor: ColorManager.whiteColor,
+      surfaceTintColor: ColorManager.whiteColor,
+      elevation: 0,
+      leadingWidth: 100,
+      shadowColor: Colors.transparent,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 20, top: 20),
+        child: Text(
+          StringManager.slash,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
       ),
-    ),
-    actions: [
-      Padding(
-        padding: const EdgeInsets.only(right: 20, top: 20),
-        child: Stack(
-          alignment: Alignment.topRight,
-          children: [
-            IconButton(onPressed: () {}, icon: Icon(IconBroken.Notification)),
-            Positioned(
-              top: 10,
-              right: 12,
-              child: CircleAvatar(
-                backgroundColor: ColorManager.redColor,
-                radius: 4,
-              ),
-            )
-          ],
-        ),
-      )
-    ],
-    title: Row(
-      children: [
-        Icon(
-          IconBroken.Location,
-        ),
+      actions: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          padding: const EdgeInsets.only(right: 20, top: 20),
+          child: Stack(
+            alignment: Alignment.topRight,
             children: [
-              Text(
-                StringManager.nasrCity,
-                style: TextStyle(
-                  fontSize: 10,
+              IconButton(onPressed: () {}, icon: Icon(IconBroken.Notification)),
+              Positioned(
+                top: 10,
+                right: 12,
+                child: CircleAvatar(
+                  backgroundColor: ColorManager.redColor,
+                  radius: 4,
                 ),
-              ),
-              Text(
-                StringManager.cairo,
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-              ),
+              )
             ],
           ),
-        ),
-        Icon(
-          IconBroken.Arrow___Down_2,
         )
       ],
-    ),
-    bottom: searchBar()
-  );
+      title: Row(
+        children: [
+          Icon(
+            IconBroken.Location,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  StringManager.nasrCity,
+                  style: TextStyle(
+                    fontSize: 10,
+                  ),
+                ),
+                Text(
+                  StringManager.cairo,
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+          Icon(
+            IconBroken.Arrow___Down_2,
+          )
+        ],
+      ),
+      bottom: searchBar());
 }

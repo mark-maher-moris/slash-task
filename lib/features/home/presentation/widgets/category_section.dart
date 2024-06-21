@@ -14,21 +14,30 @@ class CategorySection extends StatelessWidget {
       SectionHeader(
         name: StringManager.categories,
       ),
-      Row(
-        children: categories
-            .map((category) => Column(
-                  children: [
-                    CircleAvatar(
-                        radius: 50,
-                        backgroundColor: ColorManager.blackColor,
-                        child: Icon(
-                          category.icon,
-                          color: Colors.white,
-                        )),
-                    Text(category.title)
-                  ],
-                ))
-            .toList(),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: categories
+              .map((category) => Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                            radius: 50,
+                            backgroundColor: ColorManager.blackColor,
+                            child: Icon(
+                              category.icon,
+                              color: Colors.white,
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(category.title)
+                      ],
+                    ),
+                  ))
+              .toList(),
+        ),
       )
     ]);
   }

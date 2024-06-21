@@ -9,17 +9,23 @@ class ProductsSection extends StatelessWidget {
   String title;
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      SectionHeader(
-        name: title,
-      ),
-      Row(
-        children: products!
-            .map((product) => ProductWidget(
-                  productEntity: product,
-                ))
-            .toList(),
-      )
-    ]);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SectionHeader(
+            name: title,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: products!
+                  .map((product) => ProductWidget(
+                        productEntity: product,
+                      ))
+                  .toList(),
+            ),
+          )
+        ]);
   }
 }

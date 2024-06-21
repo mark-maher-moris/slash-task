@@ -10,6 +10,10 @@ class CategoryDataSource {
       CategoryEntity(icon: IconBroken.Paper_Fail, title: 'Games'),
       CategoryEntity(icon: Icons.category, title: 'Accessories'),
       CategoryEntity(icon: Icons.face_5_outlined, title: 'Books'),
+      CategoryEntity(icon: IconBroken.Time_Circle, title: 'Fashion'),
+      CategoryEntity(icon: IconBroken.Paper_Fail, title: 'Games'),
+      CategoryEntity(icon: Icons.category, title: 'Accessories'),
+      CategoryEntity(icon: Icons.face_5_outlined, title: 'Books'),
     ];
   }
 }

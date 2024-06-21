@@ -8,7 +8,6 @@ class HomeDataSource {
   Future<HomeEntity> getHomeData() async {
     final response = await rootBundle.loadString('assets/data/dummyData.json');
     final data = await jsonDecode(response);
-    print(HomeModel.fromJson(data).bestSelling);
     return HomeModel.fromJson(data);
   }
 }
