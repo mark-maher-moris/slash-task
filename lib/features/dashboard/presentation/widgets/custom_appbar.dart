@@ -6,12 +6,7 @@ import 'package:slash_task/resources/string_manager.dart';
 
 PreferredSizeWidget customAppBar() {
   return AppBar(
-      centerTitle: true,
-      backgroundColor: ColorManager.whiteColor,
-      surfaceTintColor: ColorManager.whiteColor,
-      elevation: 0,
       leadingWidth: 100,
-      shadowColor: Colors.transparent,
       leading: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20),
         child: Text(

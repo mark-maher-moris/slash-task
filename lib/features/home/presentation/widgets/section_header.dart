@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icon_broken/icon_broken.dart';
+import 'package:slash_task/resources/text_styles.dart';
 
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -16,11 +18,14 @@ class SectionHeader extends StatelessWidget {
         children: [
           Text(
             name,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStylesManager.headline1(context),
           ),
           Row(
             children: [
-              Text(StringManager.seeAll),
+              Text(
+                StringManager.seeAll,
+                style: TextStylesManager.bodyText2(context),
+              ),
               SizedBox(
                 width: 10,
               ),

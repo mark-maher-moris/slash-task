@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slash_task/core/utils/responsive.dart';
 import 'package:slash_task/features/home/presentation/screens/web_home_ui.dart';
 import '../viewmodel/cubit/home_cubit.dart';
 import '../viewmodel/cubit/home_state.dart';
@@ -17,7 +18,7 @@ class ResponsiveHomeScreen extends StatelessWidget {
         } else if (state is HomeLoaded) {
           return LayoutBuilder(
             builder: (context, constraints) {
-              if (constraints.maxWidth < 600) {
+              if (Responsive.isMobile(context)) {
                 return MobileHomeUI(
                   categories: state.categories,
                   homeData: state.homeData,

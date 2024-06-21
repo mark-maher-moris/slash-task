@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:slash_task/resources/assets_manager.dart';
+import 'package:slash_task/resources/asset_manager.dart';
 
 class BannerAd extends StatelessWidget {
   const BannerAd({super.key});
