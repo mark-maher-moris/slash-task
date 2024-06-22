@@ -1,11 +1,12 @@
 # Flutter Task For Slash-eg company
 
-## Overview
-
-Slash Task is a Flutter application built using the **Clean Architecture principles**, **Cubit** for state management, and **MVVM (Model-View-ViewModel)** pattern. The application also implements a **responsive design** to ensure it looks great on both mobile and web platforms.
 
 ## Video
 https://github.com/mark-maher-moris/slash-task-Clean-architecture-MVVM/assets/66829236/f3cacccc-2ce2-4008-9b75-661a928a95fa
+
+## Overview
+
+Slash Task is a Flutter application built using the **Clean Architecture principles**, **Cubit** for state management, and **MVVM (Model-View-ViewModel)** pattern. The application also implements a **responsive design** to ensure it looks great on both mobile and web platforms.
 
 ## Features
 
